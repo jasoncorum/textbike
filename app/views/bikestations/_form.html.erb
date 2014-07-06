@@ -1,0 +1,15 @@
+<% if @bikestation.errors.any? %>
+	<% @bikestation.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+<% end %>
+
+
+<%= form_for @bikestation do |f| %>
+	<div><%= f.label :station_name, "Please select your station:" %><br />
+		<%= f.collection_select :station_name, @station_names, :to_s, :to_s %></div>
+
+	<div><%= f.label :commute, "What time do you commute?" %><br />
+    <%= f.time_select :commute, minute_step: 15 %></div>
+	<%= f.submit "Add" %>
+<% end %>

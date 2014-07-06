@@ -3,9 +3,8 @@ ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-
-# Use sqlite3 as the database for Active Record
-
+# Simple HTTP and REST client for Ruby. Used for Capital Bikeshare API.
+gem 'rest_client'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -33,6 +32,7 @@ gem 'devise'
 # Twilio for sending texts via the application
 gem 'twilio-ruby'
 
+# Use sqlite3 as the database for Active Record
 group :development, :test do
 	gem 'sqlite3'
 end

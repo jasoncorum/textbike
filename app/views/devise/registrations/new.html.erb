@@ -14,12 +14,6 @@
   
   <div><%= f.label :cell_phone %><br />
     <%= f.telephone_field :phone %></div>
-  
-  <div><%= f.label :morning_commute %><br />
-    <%= f.time_select :morning_commute, minute_step: 15 %></div>
-
-  <div><%= f.label :evening_commute %><br />
-    <%= f.time_select :evening_commute, minute_step: 15 %></div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
