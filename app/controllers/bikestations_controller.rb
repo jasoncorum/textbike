@@ -17,6 +17,13 @@ before_action :set_bikestation, only: [:edit, :destroy, :show]
 
   def create
   	@bikestation = current_user.bikestations.build(bikestation_params)
+
+    Bikestation.get_stations.each do |x|
+      if @bikestation.station_name == x['name']
+        @bikestation.nb_bikes = x['nbBikes']
+      end
+    end
+
     if @bikestation.save
 			redirect_to @bikestation
 		else

@@ -32,6 +32,9 @@ gem 'devise'
 # Twilio for sending texts via the application
 gem 'twilio-ruby'
 
+# Whenever to handle chron jobs for checking bike stations
+gem 'whenever', :require => false
+
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 	gem 'sqlite3'

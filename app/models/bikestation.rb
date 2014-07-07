@@ -15,6 +15,13 @@ class Bikestation < ActiveRecord::Base
 		end
 	end
 
+	# def self.update_nb_bikes
+	# 	@commute_nb_bikes_update = @commute - 15*60
+	# 	Bikestation.where(@commute - Time.now < 15*60)
+
+	# 	end
+	# end
+
 end
 
 
