@@ -38,6 +38,22 @@ before_action :set_bikestation, only: [:edit, :destroy, :show]
 		end
   end
 
+  def update
+    @bikestation = current_user.bikestations.build(bikestation_params)
+
+    Bikestation.get_stations.each do |x|
+      if @bikestation.station_name == x['name']
+        @bikestation.nb_bikes = x['nbBikes']
+      end
+    end
+
+    if @bikestation.save
+      redirect_to @bikestation
+    else
+      render 'new'
+    end
+  end
+
   def show
   	@bikestation = Bikestation.find params[:id]
   end
