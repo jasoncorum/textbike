@@ -1,4 +1,4 @@
-class Bikestation < ActiveRecord::Base
+class Commute < ActiveRecord::Base
 
 	belongs_to :user
 
@@ -10,21 +10,26 @@ class Bikestation < ActiveRecord::Base
 
 	def self.get_station_name
 		@station_names = []
-		Bikestation.get_stations.each do |x|
+		Commute.get_stations.each do |x|
 		@station_names << x['name']
 		end
 	end
 
 	def self.update
-		@bikestation_update = Bikestation.where('commute < ?', Time.now)
-		@bikestation_update_id = @bikestation_update.pluck(:user_id)
+		
+	# User where commute time is in 5 min. Find all bikestations that correspond to that user. Check the api for bikes at bikestation. If no bikes send text.
 
-		@bikestation_update_phone = []
 
-		@bikestation_udate_id.each do |x|
-			User.find(x)
-			@bikestation_update_phone << User.phone
-		end
+	# 	@bikestation_update = Bikestation.where('commute < ?', (Time.now - 5))
+		
+	# 	@bikestation_update_id = @bikestation_update.pluck(:user_id)
+
+	# 	@bikestation_update_phone = []
+
+	# 	@bikestation_update_id.each do |x|
+	# 		User.find(x)
+	# 		@bikestation_update_phone << User.phone
+	# 	end
 	end
 
 

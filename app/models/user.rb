@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-	has_many :bikestations
+	has_many :commutes
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

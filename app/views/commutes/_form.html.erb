@@ -1,11 +1,11 @@
-<% if @bikestation.errors.any? %>
-	<% @bikestation.errors.full_messages.each do |msg| %>
+<% if @commute.errors.any? %>
+	<% @commute.errors.full_messages.each do |msg| %>
 	<li><%= msg %></li>
 	<% end %>
 <% end %>
 
 
-<%= form_for @bikestation do |f| %>
+<%= form_for @commute do |f| %>
 	<div><%= f.label :station_name, "Please select your station:" %><br />
 		<%= f.collection_select :station_name, @station_names, :to_s, :to_s %></div>
 

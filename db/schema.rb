@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706192056) do
+ActiveRecord::Schema.define(version: 20140709131616) do
 
-  create_table "bikestations", force: true do |t|
+  create_table "commutes", force: true do |t|
     t.integer  "nb_bikes"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140706192056) do
     t.integer  "user_id"
   end
 
-  add_index "bikestations", ["user_id"], name: "index_bikestations_on_user_id"
+  add_index "commutes", ["user_id"], name: "index_commutes_on_user_id"
 
 # Could not dump table "users" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
