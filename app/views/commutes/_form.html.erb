@@ -10,6 +10,6 @@
 		<%= f.collection_select :station_name, @station_names, :to_s, :to_s %></div>
 
 	<div><%= f.label :commute, "What time do you commute?" %><br />
-    <%= f.time_select :commute, minute_step: 15, ampm: true %></div>
+    <%= f.time_select :commute, minute_step: 15, ampm: true, in_time_zone: true %></div>
 	<%= f.submit "Save" %>
 <% end %>

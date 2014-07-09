@@ -6,6 +6,8 @@ before_action :set_commute_create_update, only: [:create, :update]
 
   def index
     @user_commutes = current_user.commutes.all
+    puts "======================================================="
+    puts Time.now
   end	
 
   def new
@@ -22,6 +24,8 @@ before_action :set_commute_create_update, only: [:create, :update]
         @commute.nb_bikes = x['nbBikes']
       end
     end
+
+    Time.zone = 'Eastern Time (US & Canada)'
 
     if @commute.save
 			redirect_to @commute
