@@ -19,6 +19,9 @@
 
 # Learn more: http://github.com/javan/whenever
 
+set :environment, "development"
+set :output, {:error => "log/cron_log_error.log", :standard => "log/cron_log.log"}
+
 every 5.minutes do
-	runner "Commute.find_commutes_no_bikes", environment => "development"
+  rake "bikestations:fetch"
 end

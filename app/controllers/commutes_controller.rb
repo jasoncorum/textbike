@@ -1,13 +1,12 @@
 class CommutesController < ApplicationController
 
 before_action :authenticate_user!
-before_action :set_commute, only: [:edit, :destroy, :show]
-before_action :set_commute_create_update, only: [:create, :update]
+before_action :correct_user, only: [:edit, :update, :destroy, :show]
+before_action :set_commute_create, only: [:create]
 
   def index
     @user_commutes = current_user.commutes.all
-    puts "======================================================="
-    puts Time.now
+
   end	
 
   def new
@@ -19,14 +18,6 @@ before_action :set_commute_create_update, only: [:create, :update]
 	end
 
   def create
-    Commute.get_stations.each do |x|
-      if @commute.station_name == x['name']
-        @commute.nb_bikes = x['nbBikes']
-      end
-    end
-
-    Time.zone = 'Eastern Time (US & Canada)'
-
     if @commute.save
 			redirect_to @commute
 		else
@@ -42,16 +33,10 @@ before_action :set_commute_create_update, only: [:create, :update]
   end
 
   def update
-    Commute.get_stations.each do |x|
-      if @commute.station_name == x['name']
-        @commute.nb_bikes = x['nbBikes']
-      end
-    end
-
-    if @commute.save
-      redirect_to @commute
+    if @commute.update(commute_params)
+      redirect_to @commute, notice: 'Commute was successfully updated.'
     else
-      render 'new'
+      render action: 'edit'
     end
   end
 
@@ -71,12 +56,12 @@ before_action :set_commute_create_update, only: [:create, :update]
   	params.require(:commute).permit(:station_name, :commute)
 	end
 
- 	def set_commute
+ 	def correct_user
  		@commute = current_user.commutes.find_by(id: params[:id])
  		redirect_to root_path, notice: "Not authorized to access this section of TextBike." if @commute.nil?
  	end
 
-  def set_commute_create_update
+  def set_commute_create
     @commute = current_user.commutes.build(commute_params)
   end
 

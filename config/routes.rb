@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -20,8 +21,8 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Wire up a URL path to our Twilio controller and action
-  post 'twilio/voice' => 'twilio#voice'
-  post 'twilio/sms' => 'twilio#sms'
+  # post 'twilio/voice' => 'twilio#voice'
+  # post 'twilio/sms' => 'twilio#sms'
 
   # Example resource route with options:
   #   resources :products do
