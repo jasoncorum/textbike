@@ -7,6 +7,10 @@ gem 'rails', '4.1.1'
 gem 'rest_client'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+# Bootstrap for stylesheets
+gem 'bootstrap-sass', '~> 3.2.0'
+# It is recommended to use Autoprefixer with Bootstrap to add browser vendor prefixes automatically.
+gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views

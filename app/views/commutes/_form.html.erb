@@ -4,12 +4,18 @@
 	<% end %>
 <% end %>
 
-
+<div class="jumbotron">
+<h2>Add a Commute</h2>
+<p>For a station map, visit the <%= link_to "Capital Bikeshare web site", "http://www.capitalbikeshare.com/stations" %>.</p>
+<p>
 <%= form_for @commute do |f| %>
 	<div><%= f.label :station_name, "Please select your station:" %><br />
 		<%= f.collection_select :station_name, @station_names, :to_s, :to_s %></div>
 
 	<div><%= f.label :commute, "What time do you commute?" %><br />
-    <%= f.time_select :commute, minute_step: 15, ampm: true, in_time_zone: true %></div>
-	<%= f.submit "Save" %>
+    <%= f.time_select :commute, minute_step: 15, ampm: true, in_time_zone: true %></div></p>
+
+  <p><%= f.submit "Save", class: "btn btn-primary btn-lg" %></p>
+
+</div>
 <% end %>

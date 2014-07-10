@@ -1,5 +1,9 @@
-<p><strong>Here is your commute:</strong><br />
+<div class="jumbotron">
+<h2>Here is Your Commute</h2>
 
 <p>Your station is: <strong><%= "#{@commute.station_name}" %></strong>.<br />
-Your commute time is: <%= "#{@commute.commute.strftime("%I:%M %p")}" %>. 
+Your commute time is: <%= "#{@commute.commute.strftime("%I:%M %p")}" %>. <br />
+<sub><%= link_to "View All Commutes", commutes_path %> | <%= link_to "Edit", edit_commute_path %> | <%= link_to "Delete", commute_path,
+                    method: :delete, data: { confirm: 'Are you sure you want to delete this commute?' }  %></sub>
 </p>
+</div>

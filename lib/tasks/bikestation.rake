@@ -27,7 +27,6 @@ namespace :bikestations do
 		end
 
 		commutes_check.each do |c|
-			puts c.station_name
 		end
 		
 		Commute.get_stations.each do |x| #For some reason all stations displaying as having no bikes.
