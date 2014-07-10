@@ -9,10 +9,10 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :phone
     devise_parameter_sanitizer.for(:account_update) << :phone
-    devise_parameter_sanitizer.for(:sign_up) << :morning_commute
-    devise_parameter_sanitizer.for(:account_update) << :morning_commute
-    devise_parameter_sanitizer.for(:sign_up) << :evening_commute
-    devise_parameter_sanitizer.for(:account_update) << :evening_commute
+    # devise_parameter_sanitizer.for(:sign_up) << :morning_commute
+    # devise_parameter_sanitizer.for(:account_update) << :morning_commute
+    # devise_parameter_sanitizer.for(:sign_up) << :evening_commute
+    # devise_parameter_sanitizer.for(:account_update) << :evening_commute
 	end
 
 end
