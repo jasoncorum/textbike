@@ -19,7 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-set :environment, "production"
+set :environment, "development"
 set :output, {:error => "log/cron_log_error.log", :standard => "log/cron_log.log"}
 
 every :weekday do
