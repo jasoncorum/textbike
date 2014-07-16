@@ -10,7 +10,7 @@
 <p>
 <%= form_for @commute do |f| %>
 	<div><%= f.label :station_name, "Please select your station:" %><br />
-		<%= f.collection_select :station_name, @station_names, :to_s, :to_s %></div>
+		<%= f.collection_select :station_name, @station_names.sort, :to_s, :to_s %></div>
 
 	<div><%= f.label :commute, "What time do you commute?" %> (Eastern Time, duh, and Monday - Friday)<br />
     <%= f.time_select :commute, minute_step: 15, ampm: true, in_time_zone: true %></div></p>
