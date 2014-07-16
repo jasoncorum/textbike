@@ -23,7 +23,7 @@ set :environment, "development"
 set :output, {:error => "log/cron_log_error.log", :standard => "log/cron_log.log"}
 
 # every :weekday do
-	every 5.minutes do
-  	rake "bikestations:fetch"
-	end
+	# every 5.minutes do
+ #  	rake "bikestations:fetch"
+	# end
 # end
