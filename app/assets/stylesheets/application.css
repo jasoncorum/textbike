@@ -29,3 +29,12 @@ body {
 #footer p {
 	color:white;
 }
+
+#footer a {
+	color:white;
+	text-decoration: underline;
+}
+
+#footer a:hover {
+	color: #962121;
+}
