@@ -9,10 +9,15 @@
 </head>
 <body>
 	<%= render 'layouts/header' %>
-	<p class="notice bg-danger container-fluid"><%= notice %></p>
-  <p class="alert container-fluid"><%= alert %></p>
 	
 	<div class="container">
+	<% flash.each do |name, msg| %>
+			<div class="alert alert-info alert-dismissible-<%= name == :notice ? "success" : "error" %>">
+			<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<%= msg %>
+			</div>
+		<% end %>
+
 	<%= yield %>
 	</div>
 </body>
