@@ -6,7 +6,7 @@
 
 <div class="jumbotron">
 <h2>Add a Commute</h2>
-<p>For a station map, visit the <%= link_to "Capital Bikeshare web site", "http://www.capitalbikeshare.com/stations" %>.</p>
+<p>For a station map, visit the <%= link_to "Capital Bikeshare web site", "http://www.capitalbikeshare.com/stations", target: "_blank" %>.</p>
 <p>
 <%= form_for @commute do |f| %>
 	<div><%= f.label :station_name, "Please select your station:" %><br />
