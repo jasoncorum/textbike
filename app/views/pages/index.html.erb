@@ -4,8 +4,8 @@
 	<p>Ever end up going to your regular Washington, DC Capital Bikeshare station for your daily commute only to find that tourists have snaked all the bikes? Yeah, us too...</p>
 	<p>TextBike will text you 5-10 minutes before your regular commute time to let you know if your bikestation is precariously low on the number of available and precious bikes.</p>
 	<% if user_signed_in? %>
-	<%= link_to "Create a Commute", new_commute_path, class: "btn btn-primary btn-lg" %>
+	<%= link_to "Create a commute", new_commute_path, class: "btn btn-primary btn-lg" %>
 	<% else %>
-	<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
 	<% end %>
 </div>
